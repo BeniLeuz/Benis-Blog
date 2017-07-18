@@ -1,29 +1,32 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-
-<h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+<div class="row">
+  <div class="col-lg-6 col-md-2">
     <p>
-      <strong>Commenter:</strong>
-      <%= comment.commenter %>
+      <strong>Title:</strong>
+      <%= @article.title %>
     </p>
 
     <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
+      <strong>Text:</strong>
+      <%= @article.text %>
     </p>
-<% end %>
 
+    <h2>Comments</h2>
+    <% @article.comments.each do |comment| %>
+        <%= render 'comments/comment', comment: comment %>
+    <% end %>
+  </div>
 
-<h2>Add a comment:</h2>
-<%= render 'comment_form' %>
+  <div class="col-lg-6 col-md-10">
+    <div class="row">
+      <div class="col-md-6">
+      <div class="col-md-6">
+      </div>
+    </div>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/comment_form' %>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    <%= link_to 'Edit', edit_article_path(@article) %> |
+    <%= link_to 'Back', articles_path %>
+  </div>
+</div>
+
