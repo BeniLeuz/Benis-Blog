@@ -1,5 +1,7 @@
 <%= form_for @article do |f| %>
 
+
+
     <% if @article.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -14,6 +16,8 @@
         </div>
     <% end %>
 
+
+
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
@@ -24,8 +28,17 @@
       <%= f.text_area :text, :cols => "30", :rows => "10"  %>
     </p>
 
+
+    <div class="form-group">
+      <label for="exampleInputFile">File input</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted">Article Picture.</small>
+    </div>
+
     <p>
       <%= f.submit %>
     </p>
+
+
 
 <% end %>
