@@ -1,6 +1,17 @@
+
+
+
+
+
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-lg-6">
+
+      <div class="container">
+        <%= image_tag @article.image.url %>
+      </div>
+
+
       <p>
         <strong>Title:</strong>
         <%= @article.title %>
@@ -18,7 +29,7 @@
 
 
     </div>
-    <div class="col">
+    <div class="col-lh-6">
       <p>
       <h2><strong>Add a comment</strong></h2>
 
