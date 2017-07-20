@@ -1,9 +1,8 @@
-class CommentPolicy <  ApplicationPolicy
+class CommentPolicy < ApplicationPolicy
 
   def destroy?
     user.admin?
   end
-
 
 
   attr_reader :user, :comment

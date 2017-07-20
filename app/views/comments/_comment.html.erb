@@ -1,15 +1,13 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.email %>
-</p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="card">
+  <%= image_tag comment.user.avatar.url(:medium), class:"card-img-top" %>
+  <div class="card-block">
+    <h4 class="card-title"><%= comment.user.email %></h4>
+    <p class="card-text">
+      <%= comment.body %>
+    </p>
+    <%= link_to 'Destroy Comment', [comment.article, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, class:"btn btn-primary" %>
+  </div>
+</div>
