@@ -1,8 +1,10 @@
 class ArticlesController < ApplicationController
 
+  before_action :authenticate_user!
 
   def destroy
     @article = Article.find(params[:id])
+    authorize @article
     @article.destroy
 
     redirect_to @article
@@ -10,7 +12,6 @@ class ArticlesController < ApplicationController
   end
 
 
-  before_action :authenticate_user!
 
   def index
     @articles = Article.all
@@ -35,7 +36,6 @@ class ArticlesController < ApplicationController
 
   def create
       @article = Article.new(article_params.merge(user: current_user))
-
       if @article.save
       redirect_to @article
       else
@@ -45,7 +45,6 @@ class ArticlesController < ApplicationController
 
       def update
       @article = Article.find(params[:id])
-
       if @article.update(article_params)
         redirect_to @article
       else

@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  pundit:
+   default: 'You cannot perform this action.'
+   article_policy:
+     destroy?: 'You cannot destroy this post!'
+
+
+

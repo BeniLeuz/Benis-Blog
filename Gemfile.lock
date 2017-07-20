@@ -127,6 +127,8 @@ GEM
     popper_js (1.10.8)
     public_suffix (2.0.5)
     puma (3.9.1)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -229,6 +231,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 5.0.0)
   puma (~> 3.7)
+  pundit
   rails (~> 5.1.2)
   sass-rails (~> 5.0)
   selenium-webdriver
